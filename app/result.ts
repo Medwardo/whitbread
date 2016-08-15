@@ -1,22 +1,22 @@
 export interface Result {
-    Id: string;
-    Name: string;
-    Contact?: Contact;
-    Location?: Location;
-    Categories?: Category[];
-    Verified?: boolean;
+    id: string;
+    name: string;
+    contact?: Contact;
+    location?: Location;
+    categories?: Category[];
+    verified?: boolean;
 }
 
 export interface Contact {
-    FormattedPhone: string;
-    Twitter: string;
-    FacebookName: string;
+    formattedPhone: string;
+    twitter: string;
+    facebookName: string;
 }
 
 export interface Location {
-    FormattedAddress: string;
+    formattedAddress: string;
 }
 
 export interface Category {
-    PluralName: string;
+    pluralName: string;
 }

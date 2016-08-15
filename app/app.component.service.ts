@@ -10,8 +10,8 @@ export class AppComponentService {
 
     constructor (private http: Http) {}
 
-    public getResults () {
-        return this.http.get(GlobalVars.fourSquareUrl + GlobalVars.sampleLocation + GlobalVars.token)
+    public getResults (location: string) {
+        return this.http.get(GlobalVars.fourSquareUrl + location + GlobalVars.token)
                  .map(this.extractData)
                  .catch(this.handleError);
     }

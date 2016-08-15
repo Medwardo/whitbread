@@ -19,12 +19,12 @@ export class AppComponent implements OnInit {
   constructor (private appComponentService: AppComponentService) {}
 
   ngOnInit () {
-    this.appComponentService.getResults().subscribe(
-      results => this.results = results
-    );
+
   }
 
   submitSearch () {
-    console.log('Form submitted!');
+    this.appComponentService.getResults(this.location).subscribe(
+      results => this.results = results
+    );
   }
 }

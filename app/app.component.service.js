@@ -17,8 +17,8 @@ var AppComponentService = (function () {
     function AppComponentService(http) {
         this.http = http;
     }
-    AppComponentService.prototype.getResults = function () {
-        return this.http.get(GlobalVars.fourSquareUrl + GlobalVars.sampleLocation + GlobalVars.token)
+    AppComponentService.prototype.getResults = function (location) {
+        return this.http.get(GlobalVars.fourSquareUrl + location + GlobalVars.token)
             .map(this.extractData)
             .catch(this.handleError);
     };

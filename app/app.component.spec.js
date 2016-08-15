@@ -6,7 +6,7 @@ var app_component_1 = require('./app.component');
 var app_component_service_1 = require('./app.component.service');
 var MockAppComponentService = (function () {
     function MockAppComponentService() {
-        this.results = [{ 'Id': '12234', 'Name': 'Test' }];
+        this.results = [{ 'id': '12234', 'name': 'Test' }];
     }
     MockAppComponentService.prototype.getResults = function () {
         return Rx_1.Observable.of(this.results);
@@ -18,9 +18,10 @@ beforeEach(function () {
         { provide: app_component_1.AppComponent, useClass: app_component_1.AppComponent }]);
 });
 describe('Testing App Component', function () {
-    it('should get a list of results from service OnInit', testing_1.inject([app_component_1.AppComponent], function (component) {
-        component.ngOnInit();
+    it('should get a list of results from service', testing_1.inject([app_component_1.AppComponent], function (component) {
+        component.submitSearch();
         expect(component.results.length).toBe(1);
+        expect(component.results[0].name).toBe('Test');
     }));
 });
 //# sourceMappingURL=app.component.spec.js.map

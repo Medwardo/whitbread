@@ -17,11 +17,10 @@ var AppComponent = (function () {
         this.appComponentService = appComponentService;
     }
     AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.appComponentService.getResults().subscribe(function (results) { return _this.results = results; });
     };
     AppComponent.prototype.submitSearch = function () {
-        console.log('Form submitted!');
+        var _this = this;
+        this.appComponentService.getResults(this.location).subscribe(function (results) { return _this.results = results; });
     };
     __decorate([
         core_1.Input(), 

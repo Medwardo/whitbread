@@ -8,5 +8,8 @@
     </form>
 </section>
 <section>
-
+    <dl id="venueList" *ngFor="let venue of results">
+        <dt>{{ venue.name }}</dt>
+        <dd>{{ venue.location.formattedAddress }}</dd>
+    </dl>
 </section>

@@ -9,7 +9,7 @@ import { Result } from './result';
 
 class MockAppComponentService {
 
-    private results: Result[] = [{'Id': '12234', 'Name': 'Test'}];
+    private results: Result[] = [{'id': '12234', 'name': 'Test'}];
 
     getResults () {
         return Observable.of(this.results);
@@ -23,10 +23,11 @@ beforeEach(() => {
 
 describe('Testing App Component', () => {
 
-    it('should get a list of results from service OnInit', inject([AppComponent],
+    it('should get a list of results from service', inject([AppComponent],
         (component: AppComponent) => {
-        component.ngOnInit();
+        component.submitSearch();
         expect(component.results.length).toBe(1);
+        expect(component.results[0].name).toBe('Test');
     }));
 
 });
