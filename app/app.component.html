@@ -1,1 +1,12 @@
-<h2>My app</h2>
+<section>
+    <form class="form-inline" (ngSubmit)="submitSearch()" #fourSquareForm="ngForm">
+        <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" name="location" id="location" [(ngModel)]="location" placeholder="Enter location" required>
+        </div>
+        <button type="submit" class="btn btn-default btn-primary" [disabled]="!fourSquareForm.form.valid">Search</button>
+    </form>
+</section>
+<section>
+
+</section>

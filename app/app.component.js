@@ -20,6 +20,13 @@ var AppComponent = (function () {
         var _this = this;
         this.appComponentService.getResults().subscribe(function (results) { return _this.results = results; });
     };
+    AppComponent.prototype.submitSearch = function () {
+        console.log('Form submitted!');
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], AppComponent.prototype, "location", void 0);
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',

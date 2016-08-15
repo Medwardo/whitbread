@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
 import './rxjs-operators';
 
@@ -14,6 +14,7 @@ import { Result } from './result';
 export class AppComponent implements OnInit {
 
   public results: Result[];
+  @Input()  location: string;
 
   constructor (private appComponentService: AppComponentService) {}
 
@@ -21,5 +22,9 @@ export class AppComponent implements OnInit {
     this.appComponentService.getResults().subscribe(
       results => this.results = results
     );
+  }
+
+  submitSearch () {
+    console.log('Form submitted!');
   }
 }
