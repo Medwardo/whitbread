@@ -5,9 +5,10 @@
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
+    "typings": "typings",
+    "test": "karma start karma.conf.js",
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings"
+    "tsc:w": "tsc -w"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
@@ -30,7 +31,7 @@
     "grunt": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-tslint": "^3.1.0",
+    "grunt-tslint": "^3.1.1",
     "http-server": "^0.9.0",
     "jasmine-core": "~2.4.1",
     "karma": "^0.13.22",
@@ -42,7 +43,7 @@
     "lodash": "^4.11.1",
     "rimraf": "^2.5.2",
     "typescript": "^1.8.10",
+    "tslint": "^3.13.0",
     "typings": "^0.8.1"
-  },
-  "test": "live-server --open=unit-tests.html"
+  }
 }

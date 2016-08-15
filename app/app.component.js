@@ -11,16 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('./rxjs-operators');
+var app_component_service_1 = require('./app.component.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(appComponentService) {
+        this.appComponentService = appComponentService;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.appComponentService.getResults().subscribe(function (results) { return _this.results = results; });
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
-            providers: [http_1.HTTP_PROVIDERS]
+            providers: [http_1.HTTP_PROVIDERS, app_component_service_1.AppComponentService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [app_component_service_1.AppComponentService])
     ], AppComponent);
     return AppComponent;
 }());
