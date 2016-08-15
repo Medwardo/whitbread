@@ -8,8 +8,20 @@
     </form>
 </section>
 <section>
-    <dl id="venueList" *ngFor="let venue of results">
-        <dt>{{ venue.name }}</dt>
-        <dd>{{ venue.location.formattedAddress }}</dd>
-    </dl>
+    <div class="panel panel-success" *ngIf="results">
+        <div class="panel-heading"><h3>Suggestions for {{ locationForDisplay }}</h3></div>
+        <div class="panel-body">
+            <dl id="venueList" *ngFor="let venue of resultsForDisplay">
+                <dt>{{ venue.name }}</dt>
+                <dd>{{ venue.location.address }} {{ venue.location.city }}</dd>
+            </dl>
+        </div>
+        <button class="btn btn-primary" *ngIf="showMoreButton" (click)="showMoreResults()">Show More</button>
+    </div>
+    <div class="panel panel-danger" *ngIf="noResults">
+        <div class="panel-heading"><h3>Suggestions for {{ locationForDisplay }}</h3></div>
+        <div class="panel-body">
+            <p>Sorry, no venues could be found for {{ locationForDisplay }}</p>
+        </div>
+    </div>
 </section>

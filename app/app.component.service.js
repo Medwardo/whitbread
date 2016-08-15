@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Observable_1 = require('rxjs/Observable');
-// import { Result } from './result';
 var GlobalVars = require('./global.vars');
 var AppComponentService = (function () {
     function AppComponentService(http) {

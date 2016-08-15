@@ -5,6 +5,7 @@ export interface Result {
     location?: Location;
     categories?: Category[];
     verified?: boolean;
+    url?: string;
 }
 
 export interface Contact {
@@ -14,6 +15,8 @@ export interface Contact {
 }
 
 export interface Location {
+    address: string;
+    city: string;
     formattedAddress: string;
 }
 

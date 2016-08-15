@@ -12,15 +12,34 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('./rxjs-operators');
 var app_component_service_1 = require('./app.component.service');
+var GlobalVars = require('./global.vars');
 var AppComponent = (function () {
     function AppComponent(appComponentService) {
         this.appComponentService = appComponentService;
+        this.showMoreButton = false;
+        this.pageSize = GlobalVars.pageSize;
+        this.noResults = false;
     }
-    AppComponent.prototype.ngOnInit = function () {
-    };
     AppComponent.prototype.submitSearch = function () {
         var _this = this;
-        this.appComponentService.getResults(this.location).subscribe(function (results) { return _this.results = results; });
+        this.appComponentService.getResults(this.location).subscribe(function (results) {
+            _this.results = results;
+            _this.resultsForDisplay = results.slice(0, _this.pageSize);
+            _this.noResults = false;
+            _this.locationForDisplay = _this.location;
+            if (_this.results.length > _this.resultsForDisplay.length) {
+                _this.showMoreButton = true;
+            }
+        }, function (error) {
+            _this.noResults = true;
+            _this.results = undefined;
+        });
+    };
+    AppComponent.prototype.showMoreResults = function () {
+        this.resultsForDisplay = this.results.slice(0, this.resultsForDisplay.length + this.pageSize);
+        if (this.resultsForDisplay.length >= this.results.length) {
+            this.showMoreButton = false;
+        }
     };
     __decorate([
         core_1.Input(), 
