@@ -4,6 +4,8 @@ body {
     text-align: center;
     font-weight: bold;
     color: #337ab7; }
+  body .input-lg {
+    margin: 10px 0; }
   body #search-container {
     margin: 75px 0 25px 0;
     text-align: center; }
@@ -11,6 +13,11 @@ body {
       font-size: 20px;
       color: #337ab7;
       margin: 0 20px; }
+    body #search-container .btn-primary {
+      float: none; }
+      @media (max-width: 768px) {
+        body #search-container .btn-primary {
+          float: left; } }
   body #results-container {
     margin-bottom: 25px; }
     body #results-container .results-title {

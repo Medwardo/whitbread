@@ -16,6 +16,12 @@ body {
             color: #337ab7;
             margin: 0 20px;
         }
+        .btn-primary {
+            float: none;
+            @media (max-width: 768px) {
+                float: left;
+            }
+        }
     }
     #results-container {
         margin-bottom: 25px;
