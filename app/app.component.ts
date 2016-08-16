@@ -26,7 +26,7 @@ export class AppComponent {
   constructor (private appComponentService: AppComponentService) {
     this.pageSize = GlobalVars.pageSize;
     this.noResults = false;
-    this.category = "";
+    this.category = '';
   }
 
   submitSearch () {
