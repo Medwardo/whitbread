@@ -9,8 +9,8 @@ export class AppComponentService {
 
     constructor (private http: Http) {}
 
-    public getResults (location: string) {
-        return this.http.get(GlobalVars.fourSquareUrl + location + GlobalVars.token)
+    public getResults (location: string, category: string) {
+        return this.http.get(GlobalVars.fourSquareUrl + location + GlobalVars.category + category + GlobalVars.token)
                  .map(this.extractData)
                  .catch(this.handleError);
     }

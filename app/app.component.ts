@@ -21,14 +21,16 @@ export class AppComponent {
   public showMoreButton: boolean = false;
   public pageSize: number;
   @Input() location: string;
+  @Input() category: string;
 
   constructor (private appComponentService: AppComponentService) {
     this.pageSize = GlobalVars.pageSize;
     this.noResults = false;
+    this.category = "";
   }
 
   submitSearch () {
-    this.appComponentService.getResults(this.location).subscribe(
+    this.appComponentService.getResults(this.location, this.category).subscribe(
       results => {
         this.results = results;
         this.resultsForDisplay = results.slice(0, this.pageSize);

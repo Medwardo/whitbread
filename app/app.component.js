@@ -19,10 +19,11 @@ var AppComponent = (function () {
         this.showMoreButton = false;
         this.pageSize = GlobalVars.pageSize;
         this.noResults = false;
+        this.category = "";
     }
     AppComponent.prototype.submitSearch = function () {
         var _this = this;
-        this.appComponentService.getResults(this.location).subscribe(function (results) {
+        this.appComponentService.getResults(this.location, this.category).subscribe(function (results) {
             _this.results = results;
             _this.resultsForDisplay = results.slice(0, _this.pageSize);
             _this.noResults = false;
@@ -46,6 +47,10 @@ var AppComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], AppComponent.prototype, "location", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], AppComponent.prototype, "category", void 0);
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
