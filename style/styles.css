@@ -1,4 +1,35 @@
 body {
   font-family: "Open Sans", sans-serif; }
+  body header {
+    text-align: center;
+    font-weight: bold;
+    color: #337ab7; }
+  body #search-container {
+    margin: 75px 0 25px 0;
+    text-align: center; }
+    body #search-container label {
+      font-size: 20px;
+      color: #337ab7; }
+  body #results-container {
+    margin-bottom: 25px; }
+    body #results-container .results-title {
+      color: #337ab7;
+      text-align: center; }
+    body #results-container .location-name {
+      font-weight: bold; }
+    body #results-container dl {
+      background-color: #eee;
+      border: solid 1px #ddd;
+      padding: 10px;
+      box-shadow: 2px 2px 3px 0px #ddd; }
+      body #results-container dl dt {
+        color: #337ab7; }
+      body #results-container dl .category-name {
+        font-style: italic;
+        font-size: 11px;
+        padding: 5px; }
+    body #results-container .results-success button {
+      margin: 0 auto;
+      display: block; }
 
 /*# sourceMappingURL=styles.css.map */

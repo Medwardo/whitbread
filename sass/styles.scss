@@ -1,3 +1,44 @@
 body {
     font-family: "Open Sans", sans-serif;
+    header {
+        text-align: center;
+        font-weight: bold;
+        color: #337ab7;
+    }
+    #search-container {
+        margin: 75px 0 25px 0;
+        text-align: center;
+        label {
+            font-size: 20px;
+            color: #337ab7;
+        }
+    }
+    #results-container {
+        margin-bottom: 25px;
+        .results-title {
+           color: #337ab7;
+           text-align: center;
+        }
+        .location-name {
+            font-weight: bold;
+        }
+        dl {
+            background-color: #eee;
+            border: solid 1px #ddd;
+            padding: 10px;
+            box-shadow: 2px 2px 3px 0px #ddd;
+            dt {
+                color: #337ab7;
+            }
+            .category-name {
+                font-style: italic;
+                font-size: 11px;
+                padding: 5px;
+            }
+        }
+        .results-success button {
+            margin: 0 auto;
+            display: block;
+        }
+    }
 }

@@ -41,6 +41,7 @@ export class AppComponent {
       error => {
         this.noResults = true;
         this.results = undefined;
+        this.locationForDisplay = this.location;
       }
     );
   }

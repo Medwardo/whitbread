@@ -33,6 +33,7 @@ var AppComponent = (function () {
         }, function (error) {
             _this.noResults = true;
             _this.results = undefined;
+            _this.locationForDisplay = _this.location;
         });
     };
     AppComponent.prototype.showMoreResults = function () {
